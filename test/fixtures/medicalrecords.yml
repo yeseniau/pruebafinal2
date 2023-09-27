@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  diagnostico: MyString
+  tratamiento: MyString
+  notas_relevantes: MyString
+  pet: one
+  appoiment: one
+
+two:
+  diagnostico: MyString
+  tratamiento: MyString
+  notas_relevantes: MyString
+  pet: two
+  appoiment: two

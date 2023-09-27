@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @vet %>
+
+<div>
+  <%= link_to "Edit this vet", edit_vet_path(@vet) %> |
+  <%= link_to "Back to vets", vets_path %>
+
+  <%= button_to "Destroy this vet", @vet, method: :delete %>
+</div>

@@ -1,0 +1,36 @@
+<div class="container text-center">
+    <h2>Bienvenidos a la Clinica Veterinaria</h2>
+    <h1>Mascota Feliz</h1>
+<div>
+
+
+<div class="table-responsive">
+    <h2>Listado de Mascotas</h2>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Especie</th>
+                <th scope="col">Raza</th>
+                <th scope="col">Dueño</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @pets.each do |pet| %>
+                    <tr class="table">
+                        <td><%= pet.id %></td>
+                        <td><%= pet.nombre %></td>
+                        <td><%= pet.especie %></td>
+                        <td><%= pet.raza %></td>
+                        <td><%= pet.client.name%></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+        <hr>
+        <%= link_to "New appointment", new_appointment_path %>
+    </div>
+</div>
+

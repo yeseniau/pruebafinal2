@@ -1,0 +1,63 @@
+<%= form_with(model: appointment) do |form| %>
+  <% if appointment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+      <ul>
+        <% appointment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :fecha, style: "display: block" %>
+    <%= form.text_field :fecha %>
+  </div>
+
+  <div>
+    <%= form.label :hora, style: "display: block" %>
+    <%= form.text_field :hora %>
+  </div>
+
+  <div>
+    <%= form.label :duracion, style: "display: block" %>
+    <%= form.text_field :duracion %>
+  </div>
+
+  <div>
+    <%= form.label :pet_id, style: "display: block" %>
+    <select name="appointment[pet_id]" id="appointment_pet_id">
+      <option value="-1" selected >Seleccione una mascota</option>
+        <% @pets.each do |pet| %>
+          <option value="<%= pet.id %>"> <%= pet.id %> - <%= pet.nombre %>  </option>
+        <% end %>
+    </select>
+  </div>
+
+  <div>
+    <%= form.label :vet_id, style: "display: block" %>
+    <select name="appointment[pet_id]" id="appointment_vet_id">
+      <option value="-1" selected >Seleccione una mascota</option>
+        <% @vets.each do |vet| %>
+          <option value="<%= vet.id %>"> <%= vet.id %> - <%= vet.nombre %> <%= vet.apellido %> </option>
+        <% end %>
+    </select>
+  </div>
+
+  <div>
+    <%= form.label :estado, style: "display: block" %>
+    <select name="estado" id="estado">
+      <option value="-1" selected >Seleccione el estado de la cita</option>
+      <option value="Pendiente" selected >Pendiente</option>
+      <option value="Completada" selected >Completada</option>
+      <option value="Cancelada" selected >Cancelada</option>
+    </select>
+  </div>
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

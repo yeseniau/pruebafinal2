@@ -1,0 +1,20 @@
+<!-- componente selector para seleccionar algun dato de otra tabla que no pertenece al modelo.
+adicionalmente despues de crear el selector agregar al controlador del modelo en el metodo index new create ....-->
+<div>
+    <%= form.label :farmer_id, style: "display: block" %>
+    <select class="form-select form-select-lg" required name="animal[farmer_id]" id="animal[farmer_id]"> <!-- requiere ...... es la forma en que se llama al dato-->
+
+    
+    <%= select(:animal, :farmer_id, Farmer.all.collect { |p| [ p.name, p.id ] }, { include_blank: "None" })%>
+                  objeto[atributo]
+    <select name="animal[farmer_id]" id="animal_farmer_id"> <!-- animal[farmer_id] se ve al inspeccionar el browser-->
+        <option value="-1" selected >Seleccione un farmer</option>
+        <% @farmers.each do |farmer| %>
+        <option value="<%= farmer.id %>"> <%= farmer.id %> - <%= farmer.name %> </option>
+        <% end %>
+    </select>
+</div>
+
+<!-- en el metodo del controlador-->
+
+@farmers= farmer.all

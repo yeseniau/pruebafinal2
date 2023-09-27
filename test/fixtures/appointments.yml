@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: MyString
+  hora: MyString
+  duracion: MyString
+  estado: MyString
+  vet: one
+  pet: one
+
+two:
+  fecha: MyString
+  hora: MyString
+  duracion: MyString
+  estado: MyString
+  vet: two
+  pet: two
